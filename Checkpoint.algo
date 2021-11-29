@@ -1,0 +1,34 @@
+ALGORITHM checkpoint 
+PROCEDURE checkpoint sorting_and_searching ()
+    VAR
+    k,i,m,att : INTEGER ;
+    BEGIN
+    k:= arr.length;
+    FOR i FROM 1 TO k  STEP 1 DO
+        att := arr [i] ;
+        m:= i-1 ;
+
+        WHILE (m >= arr[i] AND att < arr[m]) DO
+        arr [m+1] := arr[m] ;
+        m := m -1 ;
+        END_WHILE
+        ARR[ m+1] + att ;
+    END_FOR
+    END
+
+
+// algo
+
+ALGORITHM checkpoint sorting_and_searching
+VAR
+    arr: ARRAY_OF type[length];
+BEGIN
+    FOR i FROM 0 TO arr.length STEP 1  DO
+        write ( "enter the numbers :")
+        read ( arr [i]);
+    END_FOR
+    FOR i FROM 0 TO arr.length STEP 1  DO
+        write ("the new array :")
+        read (arr [k]) ;
+    END_FOR
+END
