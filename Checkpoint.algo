@@ -1,34 +1,41 @@
 ALGORITHM checkpoint 
-PROCEDURE checkpoint sorting_and_searching ()
-    VAR
-    k,i,m,att : INTEGER ;
-    BEGIN
-    k:= arr.length;
-    FOR i FROM 1 TO k  STEP 1 DO
-        att := arr [i] ;
-        m:= i-1 ;
 
-        WHILE (m >= arr[i] AND att < arr[m]) DO
-        arr [m+1] := arr[m] ;
-        m := m -1 ;
+//Our Sorting Procedure//
+PROCEDURE insertionSort (arr){
+VAR
+    n = arr.length;
+    i=FLOAT;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        tmp=arr[i];
+        j=i-1;
+        WHILE (j>0 and arr[j]>tmp) DO
+            arr[j+1]=arr[j];
+            j=j-1;
         END_WHILE
-        ARR[ m+1] + att ;
+        arr[j]=tmp;
     END_FOR
-    END
+END
+}
 
 
-// algo
+// Main Algorithm//
 
 ALGORITHM checkpoint sorting_and_searching
 VAR
-    arr: ARRAY_OF type[length];
+    arr: ARRAY : ARRAY_OF FLOAT[n];
 BEGIN
-    FOR i FROM 0 TO arr.length STEP 1  DO
-        write ( "enter the numbers :")
-        read ( arr [i]);
+//Entereing the length of the Array//
+    write ("Please enter the array's length:")
+    read (n);
+//Entering the content of the Array//
+    FOR i FROM 0 TO n STEP 1  DO
+        write ( "Enter the numbers:")
+        read ( arr[i]);
     END_FOR
-    FOR i FROM 0 TO arr.length STEP 1  DO
-        write ("the new array :")
-        read (arr [k]) ;
-    END_FOR
+//Sorting the Array//
+    write("This is the sorted array");
+    insertionSort(arr); 
 END
+
+
